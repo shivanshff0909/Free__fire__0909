@@ -13,10 +13,9 @@ jobs:
         with:
           gradle-version: 8.5
       - name: Build APK
-        run: gradle :app:assembleDebug --warning-mode all
+        run: gradle :app:assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Free-Fire-Classic-APK
           path: app/build/outputs/apk/debug/app-debug.apk
-          
