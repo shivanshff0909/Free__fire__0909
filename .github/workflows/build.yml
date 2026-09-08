@@ -10,9 +10,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.5
       - name: Build APK
         run: gradle :app:assembleDebug
-      - uses: actions/upload-artifact@v4
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: Free-Fire-Classic-APK
           path: app/build/outputs/apk/debug/app-debug.apk
